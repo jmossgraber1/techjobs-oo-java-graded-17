@@ -44,6 +44,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "jmossgraber1"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="f918cb3d-04c4-424d-9463-a8301e255301" />
+        <option name="url" value="https://github.com/LaunchCodeEducation/techjobs-oo-java-graded-17.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -171,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696799958503</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="GA 2 - Commit 10.8">
+      <option name="closed" value="true" />
+      <created>1699412262070</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1699412262070</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -189,6 +211,7 @@
     <MESSAGE value="GA 2 - Commit 9.27" />
     <MESSAGE value="GA 2 - Commit 9.30" />
     <MESSAGE value="GA 2 - Commit 10.8" />
-    <option name="LAST_COMMIT_MESSAGE" value="GA 2 - Commit 10.8" />
+    <MESSAGE value="GA 2 - Commit 11.7" />
+    <option name="LAST_COMMIT_MESSAGE" value="GA 2 - Commit 11.7" />
   </component>
 </project>
