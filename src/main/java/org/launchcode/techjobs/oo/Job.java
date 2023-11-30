@@ -68,7 +68,6 @@ public class Job {
     }
 
 
-
     public CoreCompetency getCoreCompetency() {
         return coreCompetency;
     }
@@ -77,22 +76,23 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
-
-
-    // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
-    //  other five fields. The second constructor should also call the first in order to initialize
-    //  the 'id' field.
-
-
+    public String toString(Job job){
+        String name = job.getName();
+        String employer = job.getEmployer().getValue();
+        return System.lineSeparator() + "ID:" + job.getId() + System.lineSeparator() +"Name:" + name + System.lineSeparator() +"Employer" + employer +  System.lineSeparator() +"Location" + job.getLocation() +System.lineSeparator() + "Position Type" + job.getPositionType()+ System.lineSeparator() + "Core Competency" +job.getCoreCompetency()+ System.lineSeparator();
+    }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
-//public boolean equals(Job job1, Job job2){
-//        if (job1.id == job2.id){
-//            return true;
-//        }
-//} ^^^ not quite right.
-
+//public boolean equals(Job job1, Job job2) {
+//
+//    int job1Id = job1.getId();
+//    int job2Id = job2.getId();
+//    if (job1Id == job2Id) {
+//        return true;
+//    }
+//}
+//} ^^^ not quite right?
 
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
