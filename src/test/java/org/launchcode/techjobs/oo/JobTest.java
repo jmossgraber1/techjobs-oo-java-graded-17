@@ -75,7 +75,9 @@ assertNotNull(actualCore);
     //TODO: testToStringStartsAndEndsWithNewLine
     //TDD part
     //going to need to call the toString (like job1.toString to test the output)
-
+    //1. When passed a Job object, it should return a string that
+    // contains a blank line before and after the job information.
+    //can use System.lineSeparator(),
     @Test
     public void testToStringStartsAndEndsWithNewLine(){
         job1 = new Job("coder1", new Employer("biz1"),  new Location("place1"), new PositionType("position1"), new CoreCompetency("skill1"));
@@ -84,13 +86,21 @@ assertNotNull(actualCore);
       assertEquals(expectedString, actualString);
     }
 
-    //1. When passed a Job object, it should return a string that
-    // contains a blank line before and after the job information.
 
     //2. The string should contain a label for each field,
     // followed by the data stored in that field. Each field should be on its own line.
 
+
     //3. If a field is empty, the method should add, “Data not available” after the label.
+    // use conditionals, print error message - message replaces the what's in the value field
+    @Test
+    public void testDataNotAvailable(){
+        job1 = new Job("coder1", new Employer(""),  new Location("place1"), new PositionType("position1"), new CoreCompetency("skill1"));
+        String expectedString = System.lineSeparator() + "ID: " + job1.getId() + System.lineSeparator() +"Name: coder1" + System.lineSeparator() +"Employer: Data not available" + System.lineSeparator() +"Location: place1" +System.lineSeparator() + "Position Type: position1" + System.lineSeparator() + "Core Competency: skill1" + System.lineSeparator();
+        String actualString = job1.toString();
+        assertEquals(expectedString, actualString);
+    }
+
 
     //4. (Optional) If a Job object ONLY contains data for the id field,
     // the method should return, “OOPS! This job does not seem to exist.”

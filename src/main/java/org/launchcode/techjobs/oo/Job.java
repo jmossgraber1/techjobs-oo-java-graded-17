@@ -79,11 +79,24 @@ public class Job {
     public String toString(Job job){
         String name = job.getName();
         String employer = job.getEmployer().getValue();
-        return System.lineSeparator() + "ID:" + job.getId() + System.lineSeparator() +"Name:" + name + System.lineSeparator() +"Employer" + employer +  System.lineSeparator() +"Location" + job.getLocation() +System.lineSeparator() + "Position Type" + job.getPositionType()+ System.lineSeparator() + "Core Competency" +job.getCoreCompetency()+ System.lineSeparator();
+        //WRITE A CONDITIONAL here that returns "Data not available"
+        //*** replaces what's in the VALUE field
+        if (name.equals("")){
+        return System.lineSeparator() + "ID:" + job.getId() + System.lineSeparator() +"Name:" + " Data not available" + System.lineSeparator() +"Employer:" + employer +  System.lineSeparator() +"Location:" + job.getLocation() +System.lineSeparator() + "Position Type:" + job.getPositionType()+ System.lineSeparator() + "Core Competency:" +job.getCoreCompetency()+ System.lineSeparator();
     }
+        //^^Do I repeat this for each field?
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
+        @contract(value=null)
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof Job)) return false;
+            Job job = (Job) o;
+            return getId() == job.getId();
+        }
+
 //public boolean equals(Job job1, Job job2) {
 //
 //    int job1Id = job1.getId();
