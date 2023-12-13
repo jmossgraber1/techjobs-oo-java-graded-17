@@ -113,7 +113,7 @@ public class Job {
             returnString += "Core Competency: Data not available" + System.lineSeparator();;
         }
         else{
-            returnString += "Core Competency: " + this.getCoreCompetency().getValue() + System.lineSeparator();;
+            returnString += "Core Competency:  " + this.getCoreCompetency().getValue() + System.lineSeparator();;
         }
         return returnString;
 
