@@ -102,8 +102,7 @@ assertNotNull(actualCore);
                 + System.lineSeparator() +"Employer: Data not available"
                 + System.lineSeparator() +"Location: place1"
                 +System.lineSeparator() + "Position Type: position1"
-                + System.lineSeparator() + "Core Competency: skill1"
-                + System.lineSeparator();
+                + System.lineSeparator() + "Core Competency: skill1" + System.lineSeparator();
         String actualString = job1.toString();
         assertEquals(expectedString, actualString);
     }
@@ -111,7 +110,7 @@ assertNotNull(actualCore);
     @Test
     public void testToStringContainsCorrectLabelsAndData(){
         job1 = new Job("coder1", new Employer("biz1"),  new Location("place1"), new PositionType("position1"), new CoreCompetency("skill1"));
-        String expectedString = System.lineSeparator() + "ID: " + job1.getId() + System.lineSeparator() +"Name: coder1" + System.lineSeparator() +"Employer: biz1" + System.lineSeparator() +"Location: place1" +System.lineSeparator() + "Position Type: position1" + System.lineSeparator() + "Core Competency:String expectedString = System.lineSeparator() + \"ID: \" + job1.getId() + System.lineSeparator() +\"Name: coder1\" + System.lineSeparator() +\"Employer: Data not available\" + System.lineSeparator() +\"Location: place1\" +System.lineSeparator() + \"Position Type: position1\" + System.lineSeparator() + \"Core Competency:  skill1" + System.lineSeparator();
+        String expectedString = System.lineSeparator() + "ID: " + job1.getId() + System.lineSeparator() +"Name: coder1" + System.lineSeparator() +"Employer: biz1" + System.lineSeparator() +"Location: place1" +System.lineSeparator() + "Position Type: position1" + System.lineSeparator() + "Core Competency:  skill1" + System.lineSeparator();
         String actualString = job1.toString();
         assertEquals(expectedString, actualString);
     }

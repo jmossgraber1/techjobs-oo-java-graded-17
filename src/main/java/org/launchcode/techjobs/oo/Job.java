@@ -85,12 +85,38 @@ public class Job {
         //default value needs to be specific "Data not available"
         String returnString = System.lineSeparator() + "ID: " + this.getId() + System.lineSeparator();
         if(this.getName().isBlank()){
-            returnString += "Name: Data not available";
+            returnString += "Name: Data not available" + System.lineSeparator();
         }
         else{
-            returnString += "Name: " + this.getName();
+            returnString += "Name: " + this.getName() + System.lineSeparator();;
+        }
+        if(this.getEmployer().getValue().isBlank()){
+            returnString += "Employer: Data not available" + System.lineSeparator();;
+        }
+        else{
+            returnString += "Employer: " + this.getEmployer().getValue() + System.lineSeparator();;
+        }
+        if(this.getLocation().getValue().isBlank()){
+            returnString += "Location: Data not available" + System.lineSeparator();;
+        }
+        else{
+            returnString += "Location: " + this.getLocation().getValue() + System.lineSeparator();;
+        }
+        if(this.getPositionType().getValue().isBlank()){
+            returnString += "Position Type: Data not available" + System.lineSeparator();;
+        }
+        else{
+            returnString += "Position Type: " + this.getPositionType().getValue() + System.lineSeparator();;
+        }
+
+        if(this.getCoreCompetency().getValue().isBlank()){
+            returnString += "Core Competency: Data not available" + System.lineSeparator();;
+        }
+        else{
+            returnString += "Core Competency:  " + this.getCoreCompetency().getValue() + System.lineSeparator();;
         }
         return returnString;
+
 //        return System.lineSeparator() + "ID: " + this.getId()
 //                System.lineSeparator() + "Name: " + this.getName()
 //                + System.lineSeparator() + "Employer: " + employer + System.lineSeparator()
