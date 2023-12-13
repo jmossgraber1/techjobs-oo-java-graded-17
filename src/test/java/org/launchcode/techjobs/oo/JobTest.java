@@ -10,17 +10,11 @@ public class JobTest {
     Job job1;
     Job job2;
 
-    //things i need help with:
-    //not able to add msg - is this my junit version?
-    //can't import all assertions?
-    //can't before each?
-    //are all of these tests in job class or is job class parent and the tests extend the class?
-
     //TODO: CREATE TEST 1
     // and call it testSettingId
 
     @Test
-    public void testSettingId(){
+    public void testSettingJobId(){
 
         job1 = new Job("coder1", new Employer("biz1"),  new Location("place1"), new PositionType("position1"), new CoreCompetency("skill1"));
         job2 = new Job("coder2", new Employer("biz2"), new Location("place2"), new PositionType("position2"),new CoreCompetency("skill2"));
@@ -33,6 +27,7 @@ public class JobTest {
     //TODO: CREATE TEST 2
     // and call it testJobConstructorSetsAllFields
     //don't forget to assertnotnull
+    //How did I just now realize the book gives dummy data - DO I need to change this to pass tests?
 @Test
     public void testJobConstructorSetsAllFields(){
 
@@ -62,7 +57,7 @@ CoreCompetency actualCore = job1.getCoreCompetency();
 assertEquals(expectedCore, actualCore);
 assertNotNull(actualCore);
 }
-
+//AND 5 ASSERT True statements?
 
     //TODO: testJobsForEquality
     //test that the id's have identical everything but ids
@@ -84,24 +79,48 @@ assertNotNull(actualCore);
         job1 = new Job("coder1", new Employer("biz1"),  new Location("place1"), new PositionType("position1"), new CoreCompetency("skill1"));
       String expectedString = System.lineSeparator() + "ID: " + job1.getId() + System.lineSeparator() +"Name: coder1" + System.lineSeparator() +"Employer: biz1" + System.lineSeparator() +"Location: place1" +System.lineSeparator() + "Position Type: position1" + System.lineSeparator() + "Core Competency: skill1" + System.lineSeparator();
       String actualString = job1.toString();
-      assertEquals(expectedString, actualString);
+      assertTrue(actualString.startsWith(System.lineSeparator()));
+      assertTrue(actualString.endsWith(System.lineSeparator()));
     }
 
 
     //2. The string should contain a label for each field,
     // followed by the data stored in that field. Each field should be on its own line.
-
+//HOW does this look different than above?
 
     //3. If a field is empty, the method should add, “Data not available” after the label.
-    // use conditionals, print error message - message replaces the what's in the value field
+    // DO I NEED TO use conditionals? print error message - message replaces the what's in the value field
     @Test
     public void testDataNotAvailable(){
-        job1 = new Job("coder1", new Employer(""),  new Location("place1"), new PositionType("position1"), new CoreCompetency("skill1"));
-        String expectedString = System.lineSeparator() + "ID: " + job1.getId() + System.lineSeparator() +"Name: coder1" + System.lineSeparator() +"Employer: Data not available" + System.lineSeparator() +"Location: place1" +System.lineSeparator() + "Position Type: position1" + System.lineSeparator() + "Core Competency: skill1" + System.lineSeparator();
+        job1 = new Job("coder1",
+                new Employer(""),
+                new Location("place1"),
+                new PositionType("position1"),
+                new CoreCompetency("skill1"));
+        String expectedString = System.lineSeparator() + "ID: " + job1.getId()
+                + System.lineSeparator() +"Name: coder1"
+                + System.lineSeparator() +"Employer: Data not available"
+                + System.lineSeparator() +"Location: place1"
+                +System.lineSeparator() + "Position Type: position1"
+                + System.lineSeparator() + "Core Competency: skill1"
+                + System.lineSeparator();
         String actualString = job1.toString();
         assertEquals(expectedString, actualString);
     }
 
+    @Test
+    public void testToStringContainsCorrectLabelsAndData(){
+        job1 = new Job("coder1", new Employer("biz1"),  new Location("place1"), new PositionType("position1"), new CoreCompetency("skill1"));
+        String expectedString = System.lineSeparator() + "ID: " + job1.getId() + System.lineSeparator() +"Name: coder1" + System.lineSeparator() +"Employer: biz1" + System.lineSeparator() +"Location: place1" +System.lineSeparator() + "Position Type: position1" + System.lineSeparator() + "Core Competency:String expectedString = System.lineSeparator() + \"ID: \" + job1.getId() + System.lineSeparator() +\"Name: coder1\" + System.lineSeparator() +\"Employer: Data not available\" + System.lineSeparator() +\"Location: place1\" +System.lineSeparator() + \"Position Type: position1\" + System.lineSeparator() + \"Core Competency:  skill1" + System.lineSeparator();
+        String actualString = job1.toString();
+        assertEquals(expectedString, actualString);
+    }
+
+
+    @Test
+    public void testToStringHandlesEmptyField(){
+
+    }
 
     //4. (Optional) If a Job object ONLY contains data for the id field,
     // the method should return, “OOPS! This job does not seem to exist.”
@@ -109,6 +128,8 @@ assertNotNull(actualCore);
     //Be sure to use System.lineSeparator() to declare a new line.
     // This is an universal line break that works on a variety of operating systems (OS).
     //You will need to use the lineSeparator() in the Job class and the JobTests.
+
+
 }
 
 
